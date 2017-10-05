@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head role="presentation">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="content" role="main">
+        <h1 class="main-title" role="heading" aria-label="todos">todos</h1>
+        <div class="main-menu" role="navigation" aria-label="Main menu">
+            <label>
+                <input class="main-menu-input" role="textbox" aria-label="What needs to be done?"
+                       placeholder="What needs to be done?">
+            </label>
+            <div class="technologies" role="checkbox" aria-label="Technologies">
+                <label>
+                    <input type="checkbox" name="technology" value="HTML" aria-label="HTML">HTML<br/>
+                </label>
+                <label>
+                    <input type="checkbox" name="technology" value="CSS" checked aria-label="CSS" aria-checked="true">CSS<br/>
+                </label>
+                <label>
+                    <input type="checkbox" name="technology" value="JS" aria-label="JS">JS<br/>
+                </label>
+                <label>
+                    <input type="checkbox" name="technology" value="JS tools" aria-label="JS tools">JS tools<br/>
+                </label>
+            </div>
+            <div class="menu-information" role="contentinfo" aria-label="Menu information">
+                <div class="items-left" role="status" aria-label="Count of items left">
+                    3 items left
+                </div>
+                <div class="status" role="navigation" aria-label="Status of items">
+                    <input type="button" class="btn btn-flat" value="All">
+                    <input type="button" class="btn btn-flat" value="Active">
+                    <input type="button" class="btn btn-flat" value="Completed">
+                </div>
+                <div class="task" role="log" aria-label="Last task information">
+                    Clear completed
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
