@@ -52,16 +52,6 @@
     font-style: oblique;
     }
 
-.todos-list_item_remove:focus {
-    background: #f9f9f9;
-    }
-
-~ .todos-list_item_name {
-    text-decoration: line-through;
-    color: #cccccc;
-    /*Почему не работает?*/
-    }
-
 .todos-list_item_remove {
     width: 64px;
     height: 64px;
