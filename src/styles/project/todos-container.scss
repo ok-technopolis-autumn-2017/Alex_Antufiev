@@ -1,0 +1,30 @@
+@import "../config/globals";
+
+$common-todos-container-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+.todos-container {
+  background: $c-white;
+  box-shadow: $common-todos-container-shadow;
+  position: relative;
+}
+
+.todos-container:before,
+.todos-container:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  background: $c-white;
+  box-shadow: $common-todos-container-shadow;
+  z-index: -1;
+}
+
+.todos-container:before {
+  height: $offset_high_2x;
+  left: $offset;
+  right: $offset;
+}
+
+.todos-container:after {
+  height: $offset_high;
+  left: $offset_half;
+  right: $offset_half;
+}
