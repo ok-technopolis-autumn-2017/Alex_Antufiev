@@ -1,0 +1,99 @@
+@import "../config/globals";
+
+.todos-list {
+
+}
+
+.todos-list_item {
+  border-bottom: 1px groove $color-border;
+}
+
+.todos-list_item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.todos-list_item:hover {
+  background: $color-border;
+}
+
+.todos-list_item_checkbox {
+  width: $button_side;
+  height: $button_side;
+  position: relative;
+  float: left;
+}
+
+.todos-list_item_checkbox_target {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.todos-list_item_checkbox_visual {
+  width: $button_side_main_x3;
+  height: $button_side_main_x3;
+  position: absolute;
+  margin: $margin_normal 0 0 $margin_normal;
+  border: 1px solid $c-gray-light;
+  border-radius: 50%;
+}
+
+.todos-list_item_checkbox_target:checked ~ .todos-list_item_checkbox_visual {
+  background: url('../../images/icons/completed.png') no-repeat 8px 8px;
+  border-color: $color-border-checkbox;
+  font-style: oblique;
+}
+
+.todos-list_item_remove:focus {
+  background: $c-white-light;
+}
+
+~ .todos-list_item_name {
+  text-decoration: line-through;
+  color: $c-gray-light;
+}
+
+.todos-list_item_remove {
+  width: $button_side;
+  height: $button_side;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  float: right;
+  position: relative;
+  outline: none;
+}
+
+.todos-list_item_remove_icon {
+  width: $button_side_main_x1_5;
+  height: $button_side_main_x1_5;
+  background: url('../../images/icons/close.png') no-repeat 0 0;
+  position: absolute;
+  margin: -$offset_low_3x 0 0 23px;
+}
+
+.todos-list_item_name-w {
+  height: $button_side;
+  overflow: hidden;
+}
+
+.todos-list_item_name {
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+  resize: none;
+  color: $c-gray-dark;
+  font-size: $fs_large;
+  line-height: 20px;
+  font-weight: $fw_normal;
+  padding-right: $offset_low_4x;
+  margin-top: $offset_high_4x;
+  outline: none;
+}

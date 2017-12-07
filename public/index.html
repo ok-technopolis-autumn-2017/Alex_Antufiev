@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>todos</title>
+
+    <link rel="stylesheet" href="../src/styles/default.scss"/>
+
+</head>
+
+<body>
+
+<div class="content">
+
+    <div class="todos-header">
+
+        <h1 class="todos-title">todos</h1>
+
+    </div>
+
+    <div class="todos-container">
+
+        <div class="todos-add">
+
+            <button class="todos-add_select-all" aria-label="select all items as completed">
+                <div class="todos-add_select-all_icon"></div>
+            </button>
+
+            <div class="todos-add_item-w">
+                <input class="todos-add_item" placeholder="What needs to be done?" aria-label="add item">
+            </div>
+
+        </div>
+
+        <div class="todos-list">
+
+            <div class="todos-list_item">
+
+                <div class="todos-list_item_checkbox">
+                    <input type="checkbox" class="todos-list_item_checkbox_target"
+                           aria-label="Mark as completed item"/>
+                    <div class="todos-list_item_checkbox_visual"></div>
+                </div>
+
+                <button class="todos-list_item_remove" aria-label="remove item">
+                    <div class="todos-list_item_remove_icon"></div>
+                </button>
+
+                <div class="todos-list_item_name-w">
+                    <textarea class="todos-list_item_name" readonly>HTML</textarea>
+                </div>
+
+            </div>
+
+            <div class="todos-list_item __complete">
+
+                <div class="todos-list_item_checkbox">
+                    <input type="checkbox" checked="checked" class="todos-list_item_checkbox_target"
+                           aria-label="Mark as no completed item"/>
+                    <div class="todos-list_item_checkbox_visual"></div>
+                </div>
+
+                <div class="todos-list_item_remove-w">
+                    <button class="todos-list_item_remove" aria-label="remove item">
+                        <div class="todos-list_item_remove_icon"></div>
+                    </button>
+                </div>
+
+                <div class="todos-list_item_name-w">
+                    <textarea class="todos-list_item_name" readonly>CSS</textarea>
+                </div>
+
+            </div>
+
+            <div class="todos-list_item">
+
+                <div class="todos-list_item_checkbox">
+                    <input type="checkbox" class="todos-list_item_checkbox_target"
+                           aria-label="Mark as completed item"/>
+                    <div class="todos-list_item_checkbox_visual"></div>
+                </div>
+
+                <div class="todos-list_item_remove-w">
+                    <button class="todos-list_item_remove" aria-label="remove item">
+                        <div class="todos-list_item_remove_icon"></div>
+                    </button>
+                </div>
+
+                <div class="todos-list_item_name-w">
+                    <textarea class="todos-list_item_name" readonly>JS</textarea>
+                </div>
+
+            </div>
+
+            <div class="todos-list_item">
+
+                <div class="todos-list_item_checkbox">
+                    <input type="checkbox" class="todos-list_item_checkbox_target"
+                           aria-label="Mark as completed item"/>
+                    <div class="todos-list_item_checkbox_visual"></div>
+                </div>
+
+                <div class="todos-list_item_remove-w">
+                    <button class="todos-list_item_remove" aria-label="remove item">
+                        <div class="todos-list_item_remove_icon"></div>
+                    </button>
+                </div>
+
+                <div class="todos-list_item_name-w">
+                    <textarea class="todos-list_item_name" readonly>JS tools</textarea>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="todos-actions-bar">
+
+            <div class="todos-actions-bar_counter-w" aria-label="Count of no completed items">
+                <textarea class="todos-actions-bar_counter" readonly>3 items left</textarea>
+            </div>
+
+            <div class="todos-actions-bar_filters">
+                <!--align="center"-->
+                <div class="todos-actions-bar_filter_all-w">
+                    <button class="todos-actions-bar_filter_all __active" data-filter="all"
+                            aria-label="show all items">
+                        All
+                    </button>
+                </div>
+
+                <div class="todos-actions-bar_filter_active-w">
+                    <button class="todos-actions-bar_filter_active" data-filter="no_completed"
+                            aria-label="show no completed items">
+                        Active
+                    </button>
+                </div>
+
+                <div class="todos-actions-bar_filter_complete-w">
+                    <button class="todos-actions-bar_filter_complete __active" data-filter="completed"
+                            aria-label="show completed items">
+                        Completed
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="todos-actions-bar_clear-w">
+                <textarea class="todos-actions-bar_clear" readonly>Clear completed</textarea>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

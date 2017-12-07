@@ -1,0 +1,100 @@
+@import "../config/globals";
+
+$border-focus: 1px solid $color-focus;
+$border-no_focus: 1px solid $c-white;
+
+.todos-actions-bar {
+  height: 39px;
+}
+
+.todos-actions-bar:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.todos-actions-bar_counter-w {
+  float: left;
+  width: $offset_action-bar_counter;
+}
+
+.todos-actions-bar_counter {
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+  resize: none;
+  width: $offset_action-bar_counter;
+  color: $c-gray;
+  line-height: $offset_high_4x;
+  font-weight: $fw_normal;
+  padding: 0 0 0 $offset_low_4x;
+  outline: none;
+  margin-top: $offset_low_3x;
+}
+
+.todos-actions-bar_clear-w {
+  float: right;
+}
+
+.todos-actions-bar_clear {
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+  resize: none;
+  width: 116px;
+  margin-top: $offset_low_3x;
+  color: $c-gray;
+  line-height: $offset_high_4x;
+  font-weight: $fw_normal;
+  padding: 0 $offset_low_4x 0 0;
+  outline: none;
+}
+
+.todos-actions-bar_filter_all:focus {
+  border: $border-focus;
+  border-radius: 15%;
+}
+
+.todos-actions-bar_filter_active:focus {
+  border: $border-focus;
+  border-radius: 15%;
+}
+
+.todos-actions-bar_filter_complete:focus {
+  border: $border-focus;
+  border-radius: 15%;
+}
+
+.todos-actions-bar_filters {
+  position: relative;
+}
+
+.todos-actions-bar_filter_all {
+  outline: none;
+  position: absolute;
+  color: $c-gray;
+  background: none;
+  border: $border-no_focus;
+  padding-bottom: 0;
+  margin: $offset_high*2 0 0 10%;
+}
+
+.todos-actions-bar_filter_active {
+  outline: none;
+  position: absolute;
+  color: $c-gray;
+  background: none;
+  border: $border-no_focus;
+  padding-bottom: 0;
+  margin: $offset_high*2 0 0 20%;
+}
+
+.todos-actions-bar_filter_complete {
+  outline: none;
+  position: absolute;
+  color: $c-gray;
+  background: none;
+  border: $border-no_focus;
+  padding-bottom: 0;
+  margin: $offset_high*2 0 0 30%;
+}

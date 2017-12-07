@@ -1,0 +1,58 @@
+@import "../config/globals";
+
+.todos-add {
+  border-bottom: 1px groove $color-border;
+}
+
+.todos-add {
+  @include clearfix();
+}
+
+.todos-add_select-all {
+  width: $button_side;
+  height: $button_side;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+  position: relative;
+  outline: none;
+}
+
+.todos-add_select-all:focus {
+  background: $c-white-light;
+}
+
+.todos-add_select-all_icon {
+  width: $button_side_main_x2;
+  height: $button_side_main;
+  background: url('../../images/icons/select-all.png') no-repeat 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -$offset_low_2x -$offset_low_4x;
+}
+
+.todos-add_item-w {
+  overflow: hidden;
+}
+
+.todos-add_item {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+  color: $c-gray-dark;
+  font-size: $fs_large;
+  line-height: 30px;
+  font-weight: $fw_normal;
+  padding-right: $offset_low_4x;
+  margin-top: $margin_normal;
+  outline: none;
+}
+
+.todos-add_item::placeholder {
+  color: $c-gray-light;
+  font-style: italic;
+}
