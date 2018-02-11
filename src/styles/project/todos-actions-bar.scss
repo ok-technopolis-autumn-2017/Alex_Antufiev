@@ -5,18 +5,17 @@ $border-no_focus: 1px solid $c-white;
 
 .todos-actions-bar {
   height: 39px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.todos-actions-bar:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.todos-actions-bar_counter-w {
-  float: left;
-  width: $offset_action-bar_counter;
-}
+//.todos-actions-bar:after {
+//  content: '';
+//  display: block;
+//  clear: both;
+//}
 
 .todos-actions-bar_counter {
   box-sizing: border-box;
@@ -30,14 +29,11 @@ $border-no_focus: 1px solid $c-white;
   padding: 0 0 0 $offset_low_4x;
   outline: none;
   margin-top: $offset_low_3x;
-}
-
-.todos-actions-bar_clear-w {
-  float: right;
+  float: left;
 }
 
 .todos-actions-bar_clear {
-  box-sizing: border-box;
+  //box-sizing: border-box;
   border: 0;
   background: none;
   resize: none;
@@ -48,53 +44,30 @@ $border-no_focus: 1px solid $c-white;
   font-weight: $fw_normal;
   padding: 0 $offset_low_4x 0 0;
   outline: none;
+  float: right;
 }
 
-.todos-actions-bar_filter_all:focus {
-  border: $border-focus;
-  border-radius: 15%;
-}
-
-.todos-actions-bar_filter_active:focus {
-  border: $border-focus;
-  border-radius: 15%;
-}
-
-.todos-actions-bar_filter_complete:focus {
+.todos-actions-bar_filter:focus {
   border: $border-focus;
   border-radius: 15%;
 }
 
 .todos-actions-bar_filters {
-  position: relative;
+  //position: relative;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+
 }
 
-.todos-actions-bar_filter_all {
+.todos-actions-bar_filter {
   outline: none;
-  position: absolute;
+  //position: relative;
   color: $c-gray;
   background: none;
   border: $border-no_focus;
   padding-bottom: 0;
   margin: $offset_high*2 0 0 10%;
-}
+  align-items: center;
 
-.todos-actions-bar_filter_active {
-  outline: none;
-  position: absolute;
-  color: $c-gray;
-  background: none;
-  border: $border-no_focus;
-  padding-bottom: 0;
-  margin: $offset_high*2 0 0 20%;
-}
-
-.todos-actions-bar_filter_complete {
-  outline: none;
-  position: absolute;
-  color: $c-gray;
-  background: none;
-  border: $border-no_focus;
-  padding-bottom: 0;
-  margin: $offset_high*2 0 0 30%;
 }
