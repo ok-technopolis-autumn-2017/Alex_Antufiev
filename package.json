@@ -1,7 +1,7 @@
 {
-  "name": "todos",
+  "name": "preprocessor-stub",
   "version": "0.0.1",
-  "description": "todos",
+  "description": "Stub for setting up preprocessor",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ok-technopolis/preprocessor-stub.git"
+    "url": "git+ssh://git@github.com/ok-technopolis/preprocessor-stub.git"
   },
-  "author": "",
+  "author": "alex",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-css-rebase-urls": "0.0.5",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.5.1"
+    "gulp-sourcemaps": "^2.5.1",
+    "babel": "^6.23.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-register": "^6.24.0",
+    "mocha": "^3.4.2"
+  },
+  "bugs": {
+    "url": "https://github.com/ok-technopolis/preprocessor-stub/issues"
+  },
+  "homepage": "https://github.com/ok-technopolis/preprocessor-stub#readme",
+  "dependencies": {
+    "gulp-minify-css": "latest",
+    "gulp-css-url-adjuster": "latest",
+    "gulp-if": "latest",
+    "webpack-stream": "latest",
+    "vinyl-named": "latest",
+    "webpack": "latest"
   }
 }

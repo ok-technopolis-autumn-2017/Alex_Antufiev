@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>TODOS</title>
+
+    <!-- Custom styles for this template -->
+    <link rel='stylesheet' type='text/css' href='dist/styles/default.css'>
+
+
+</head>
+
+<body>
+<div class="todos-main-wrapper">
+    <div class="todos-title">
+        todos
+    </div>
+
+    <div class="todos-container">
+
+        <div class="todos-add">
+
+            <button class="todos-add_select-all" aria-label="select all like done">
+                <div class="todos-add_select-all_icon"></div>
+            </button>
+            <div class="todos-add_new-item-w">
+                <input class="todos-add_new-item" placeholder="What needs to be done?" aria-label="add new item"/>
+            </div>
+        </div>
+
+        <div class="todos-list">
+        </div>
+
+        <div class="todos-actions-bar">
+
+            <div class="todos-actions-bar_counter-undone" aria-label="number of undone items">
+                3 items left
+            </div>
+
+            <div class="todos-filters">
+                <button class="todos-filter __all" autofocus="autofocus" aria-label="show all items">All</button>
+                <button class="todos-filter __active" aria-label="show undone items">Active</button>
+                <button class="todos-filter __completed" aria-label="show done items">Completed</button>
+            </div>
+            <div class="todos-actions-bar_delete">
+                <button class="todos-actions-bar_delete-done" aria-label="delete all done items">
+                    Clear completed
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="dist/scripts/bundle.js"></script>
+</body>
+
+</html>

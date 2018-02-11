@@ -1,0 +1,68 @@
+@import "../../../config/globals";
+.todos-add{
+    @include null-margins-paddings();
+    @include clearfix();
+    }
+
+    .todos-add_select-all{
+        width: 64px;
+        height: 64px;
+
+        background: none;
+        border: none;
+        @include null-margins-paddings();
+
+        float: left;
+        cursor: pointer;
+        position: relative;
+        }
+
+        .todos-add_select-all:hover,
+        .todos-add_select-all:focus{
+            background: #f9f9f9;
+            border: none;
+        }
+
+        .todos-add_select-all_icon{
+            width: 24px;
+            height: 12px;
+
+            background: url('../../../../images/icons/select-all.png') no-repeat 0 0;
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            margin: -6px -12px;
+            }
+
+
+    .todos-add_new-item-w{
+        overflow: hidden;
+        height: 64px;
+
+        }
+
+        .todos-add_new-item{
+            width: 100%;
+            box-sizing: border-box;
+            border: 0;
+            background: none;
+            color: $c-black-light;
+            display: inline-block;
+            line-height: 24px;
+            padding: 0;
+            padding-right: 12px;
+            margin-top: 16px;
+            outline: none;
+            font-size: $medium-text-size;
+            height: 30px;
+            }
+
+            .todos-add_new-item::placeholder{
+                color: $c-grey-light-light;
+                font-style: italic;
+                font-size: $medium-text-size;
+
+                }
+

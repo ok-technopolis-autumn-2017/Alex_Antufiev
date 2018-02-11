@@ -1,0 +1,52 @@
+@import "../../../config/globals";
+.todos-actions-bar{
+
+    @include null-margins-paddings();
+    display: flex;
+    font-size: $small-text-size;
+    color: $c-gray-dark;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }
+
+    .todos-actions-bar_counter-undone{
+        margin: 12px;
+        height: 24px;
+
+       }
+
+    .todos-filters{
+        height: 24px;
+        margin: 12px;
+
+        }
+
+        .todos-actions-bar_delete{
+            height: 24px;
+            margin: 12px;
+
+
+
+        }
+            .todos-actions-bar_delete-done{
+                display: inline;
+                padding: 0px;
+                margin: 0px;
+                font-size: $small-text-size;
+                color: $c-gray-dark;
+                box-sizing: border-box;
+                border: 2px solid $c-white;
+                border-radius: 2px;
+                cursor: pointer;
+                background: none;
+                outline: none;
+
+
+            }
+
+            .todos-actions-bar_delete-done:hover,
+            .todos-actions-bar_delete-done:focus{
+                border: 2px solid $border-color;
+                border-radius: 2px;
+                }

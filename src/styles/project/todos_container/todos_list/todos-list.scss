@@ -1,0 +1,91 @@
+@import "../../../config/globals";
+.todos-list{
+    @include null-margins-paddings();
+    border-bottom: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+    }
+
+    .todos-item{
+        @include null-margins-paddings();
+        border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        @include clearfix();
+    }
+
+    .todos-item:hover{
+        background: $c-white-dark;
+    }
+
+        /* NAME*/
+        .todos-item_name-w{
+            overflow: hidden;
+            height: 64px;
+            }
+
+            .todos-item_name{
+                width: 100%;
+                overflow:hidden;
+                box-sizing: border-box;
+                background: none;
+                font-size: $medium-text-size;
+                color: #666;
+                line-height: 30px;
+                font-weight: 200;
+                padding-right: 12px;
+                margin-top: 18px;
+                outline: none;
+                resize: none;
+                border: none;
+                margin-bottom: 0;
+                }
+            .__done > .todos-item_name-w > .todos-item_name{
+                text-decoration:line-through;
+            }
+
+        .todos-item_belonging-checkbox{
+            float: left;
+        }
+
+        /*DELETE BUTTOM*/
+        .todos-item_delete-w{
+            width: 64px;
+            height: 64px;
+
+            background: none;
+            border: none;
+            padding: 0;
+
+            float: right;
+
+            position: relative;
+            opacity: 1;
+        }
+            .todos-item_delete{
+                background: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                width: 64px;
+                height: 64px;
+
+                cursor: pointer;
+                position: absolute;
+                opacity: -10;
+                }
+
+            .todos-item_delete-w:hover{
+                filter: brightness(0);
+            }
+
+                .todos-item:hover .todos-item_delete_icon{
+                    width: 24px;
+                    height: 24px;
+
+                    background: url('../../../../images/icons/close.png') no-repeat 0 0;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+
+                    margin: -6px -12px;
+                    opacity: 300;
+                    }

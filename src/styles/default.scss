@@ -1,7 +1,11 @@
 @import "reset";
-@import "base";
-@import "project/todos-title";
-@import "project/todos-container";
-@import "project/todos-add";
-@import "project/todos-list";
-@import "project/todos-actions-bar";
+
+@import "base/todos-checkbox";
+@import "base/todos-filter";
+
+@import "project/todos-main";
+@import "project/todos_title/todos-title";
+@import "project/todos_container/todos-container";
+@import "project/todos_container/todos_add/todos-add";
+@import "project/todos_container/todos_list/todos-list";
+@import "project/todos_container/todos_actions_bar/todos-actions-bar";
