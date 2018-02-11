@@ -1,21 +1,20 @@
 @import "../config/globals";
 
 .todos-list {
-
+  border: none;
 }
 
 .todos-list_item {
   border-bottom: 1px groove $color-border;
-}
-
-.todos-list_item:after {
-  content: '';
-  display: block;
-  clear: both;
+  height: 64px;
 }
 
 .todos-list_item:hover {
   background: $color-border;
+}
+
+~ .todos-list_item_remove {
+  visibility: visible;
 }
 
 .todos-list_item_checkbox {
@@ -23,6 +22,8 @@
   height: $button_side;
   position: relative;
   float: left;
+  border: #666666;
+
 }
 
 .todos-list_item_checkbox_target {
@@ -35,58 +36,62 @@
   z-index: 1;
 }
 
+.todos-list_item_checkbox_no-visual {
+  border: 1px solid $c-gray-light;
+  border-radius: 50%;
+  width: $button_side_main*3;
+  height: $button_side_main*3;
+  position: absolute;
+  margin: $margin_normal 0 0 $margin_normal;
+}
+
 .todos-list_item_checkbox_visual {
-  width: $button_side_main_x3;
-  height: $button_side_main_x3;
+  width: $button_side_main*3;
+  height: $button_side_main*3;
   position: absolute;
   margin: $margin_normal 0 0 $margin_normal;
   border: 1px solid $c-gray-light;
   border-radius: 50%;
+  background: url('../../../images/icons/completed.png') no-repeat 8px 8px;
+  visibility: hidden;
 }
 
 .todos-list_item_checkbox_target:checked ~ .todos-list_item_checkbox_visual {
-  background: url('../../images/icons/completed.png') no-repeat 8px 8px;
+  visibility: visible;
   border-color: $color-border-checkbox;
   font-style: oblique;
 }
 
-.todos-list_item_remove:focus {
-  background: $c-white-light;
-}
-
-~ .todos-list_item_name {
-  text-decoration: line-through;
-  color: $c-gray-light;
+.todos-list_item_checkbox_target:checked ~ .todos-list_item_checkbox_no-visual {
+  border-color: $color-border-checkbox;
 }
 
 .todos-list_item_remove {
   width: $button_side;
   height: $button_side;
-  background: none;
   border: none;
   padding: 0;
   margin: 0;
   float: right;
-  position: relative;
-  outline: none;
+  //position: relative;
+  //outline: none;
+  visibility: hidden;
+  background: url('../../../images/icons/close.png') no-repeat 0 0;
 }
 
 .todos-list_item_remove_icon {
-  width: $button_side_main_x1_5;
-  height: $button_side_main_x1_5;
-  background: url('../../images/icons/close.png') no-repeat 0 0;
+  width: $button_side_main*1.5;
+  height: $button_side_main*1.5;
   position: absolute;
   margin: -$offset_low_3x 0 0 23px;
 }
 
-.todos-list_item_name-w {
+.todos-list_item_name {
   height: $button_side;
   overflow: hidden;
-}
-
-.todos-list_item_name {
   box-sizing: border-box;
-  border: 0;
+  display: inline-block;
+  border: none;
   background: none;
   resize: none;
   color: $c-gray-dark;
@@ -94,6 +99,7 @@
   line-height: 20px;
   font-weight: $fw_normal;
   padding-right: $offset_low_4x;
-  margin-top: $offset_high_4x;
+  margin-top: $offset_6x;
   outline: none;
+  white-space: normal;
 }
