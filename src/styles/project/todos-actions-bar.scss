@@ -4,25 +4,18 @@ $border-focus: 1px solid $color-focus;
 $border-no_focus: 1px solid $c-white;
 
 .todos-actions-bar {
-  height: 39px;
+  min-height: 40px;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-//.todos-actions-bar:after {
-//  content: '';
-//  display: block;
-//  clear: both;
-//}
-
 .todos-actions-bar_counter {
   box-sizing: border-box;
   border: 0;
   background: none;
   resize: none;
-  width: $offset_action-bar_counter;
   color: $c-gray;
   line-height: $offset_high_4x;
   font-weight: $fw_normal;
@@ -33,14 +26,11 @@ $border-no_focus: 1px solid $c-white;
 }
 
 .todos-actions-bar_clear {
-  //box-sizing: border-box;
   border: 0;
   background: none;
   resize: none;
-  width: 116px;
   margin-top: $offset_low_3x;
   color: $c-gray;
-  line-height: $offset_high_4x;
   font-weight: $fw_normal;
   padding: 0 $offset_low_4x 0 0;
   outline: none;
@@ -49,25 +39,21 @@ $border-no_focus: 1px solid $c-white;
 
 .todos-actions-bar_filter:focus {
   border: $border-focus;
-  border-radius: 15%;
 }
 
 .todos-actions-bar_filters {
-  //position: relative;
   align-items: center;
   justify-content: space-between;
   display: flex;
-
 }
 
 .todos-actions-bar_filter {
   outline: none;
-  //position: relative;
   color: $c-gray;
   background: none;
   border: $border-no_focus;
   padding-bottom: 0;
   margin: $offset_high*2 0 0 10%;
   align-items: center;
-
+  border-radius: 8px;
 }

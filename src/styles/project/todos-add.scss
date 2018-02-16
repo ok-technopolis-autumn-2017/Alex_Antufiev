@@ -2,12 +2,7 @@
 
 .todos-add {
   border-bottom: 1px groove $color-border;
-}
-
-.todos-add:after {
-  content: '';
-  display: block;
-  clear: both;
+  @include clearfix();
 }
 
 .todos-add_select-all {
@@ -19,6 +14,7 @@
   margin: 0;
   float: left;
   position: relative;
+  outline: none;
 }
 
 .todos-add_select-all:focus {
@@ -31,7 +27,6 @@
   background: url('../../../images/icons/select-all.png') no-repeat 0 0;
   position: absolute;
   left: 50%;
-  //top: 50%;
   margin: $button_side_main/2*-1 $button_side_main*-1;
 }
 

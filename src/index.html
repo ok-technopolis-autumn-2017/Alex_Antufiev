@@ -29,41 +29,43 @@
 
         <div class="todos-list">
             <div class="todos-list_item">
-                <div class="todos-list_item_checkbox">
+                <div class="todos-list_item_checkbox todos-list_item_ready-mark">
                     <input type="checkbox" class="todos-list_item_checkbox_target"
-                           aria-label="Mark as completed item"/>
+                           aria-label="Mark as (un)completed item"/>
                     <div class="todos-list_item_checkbox_visual"></div>
-                    <div class="todos-list_item_checkbox_no-visual"></div>
+                    <div class="todos-list_item_checkbox_no_visual"></div>
                 </div>
                 <button class="todos-list_item_remove" aria-label="remove item"></button>
-                <div class="todos-list_item_name" contenteditable="false">HTML</div>
+                <div class="todos-list_item_name" contenteditable="false">
+                    HTML
+                </div>
             </div>
             <div class="todos-list_item __complete">
-                <div class="todos-list_item_checkbox">
+                <div class="todos-list_item_checkbox todos-list_item_ready-mark">
                     <input type="checkbox" checked="checked" class="todos-list_item_checkbox_target"
                            aria-label="Mark as no completed item"/>
                     <div class="todos-list_item_checkbox_visual"></div>
-                    <div class="todos-list_item_checkbox_no-visual"></div>
+                    <div class="todos-list_item_checkbox_no_visual"></div>
                 </div>
                 <button class="todos-list_item_remove" aria-label="remove item"></button>
                 <div class="todos-list_item_name" contenteditable="false">CSS</div>
             </div>
             <div class="todos-list_item">
-                <div class="todos-list_item_checkbox">
+                <div class="todos-list_item_checkbox todos-list_item_ready-mark">
                     <input type="checkbox" class="todos-list_item_checkbox_target"
                            aria-label="Mark as completed item"/>
                     <div class="todos-list_item_checkbox_visual"></div>
-                    <div class="todos-list_item_checkbox_no-visual"></div>
+                    <div class="todos-list_item_checkbox_no_visual"></div>
                 </div>
                 <button class="todos-list_item_remove" aria-label="remove item"></button>
                 <div class="todos-list_item_name" contenteditable="false">JS</div>
             </div>
             <div class="todos-list_item">
-                <div class="todos-list_item_checkbox">
+                <div class="todos-list_item_checkbox todos-list_item_ready-mark">
                     <input type="checkbox" class="todos-list_item_checkbox_target"
                            aria-label="Mark as completed item"/>
                     <div class="todos-list_item_checkbox_visual"></div>
-                    <div class="todos-list_item_checkbox_no-visual"></div>
+                    <div class="todos-list_item_checkbox_no_visual"></div>
                 </div>
                 <button class="todos-list_item_remove" aria-label="remove item"></button>
                 <div class="todos-list_item_name" contenteditable="false">JS tools</div>
@@ -85,7 +87,7 @@
                         aria-label="show no completed items">
                     Active
                 </button>
-                <button class="todos-actions-bar_filter " data-filter="completed"
+                <button class="todos-actions-bar_filter" data-filter="completed"
                         aria-label="show completed items">
                     Completed
                 </button>
