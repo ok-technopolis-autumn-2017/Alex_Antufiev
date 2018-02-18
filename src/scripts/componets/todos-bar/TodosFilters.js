@@ -2,7 +2,7 @@ var Observable = require('../../utils/observer/Observable');
 var ActionsTypes = require('../../constants/ActionsTypes');
 var FilterTypes = require('../../constants/FilterTypes');
 
-var TODOS_FILTERS_CLASS = ".todos-filters"
+var TODOS_FILTERS_CLASS = ".todos-actions_bar-filters";
 
 function TodosFiltersConstructor() {
     this.todosDelButton.addEventListener('click', this.handlerClick);
@@ -54,7 +54,7 @@ todosFiltersConstructorPrototype.setFocus = function (
 
         case (FilterTypes.FILTER_COMPLETED): {
             if (currentFilter.localeCompare(
-                FilterTypes.FILTER_COMPLETED) == 0) {
+                    FilterTypes.FILTER_COMPLETED) == 0) {
                 if (type = "b") {
                     return '2px solid #efefef'
                 } else {
@@ -73,7 +73,7 @@ todosFiltersConstructorPrototype.setFocus = function (
 
 todosFiltersConstructorPrototype.handlerClick = function (event) {
     if (event.target.className.localeCompare(
-        FilterTypes.FILTER_COMPLETED) == 0 ||
+            FilterTypes.FILTER_COMPLETED) == 0 ||
         event.target.className.localeCompare(
             FilterTypes.FILTER_ACTIVE) == 0||
         event.target.className.localeCompare(
@@ -89,8 +89,8 @@ todosFiltersConstructorPrototype.handlerClick = function (event) {
 
 todosFiltersConstructorPrototype.render = function (currentFilter) {
     document.getElementsByClassName(FilterTypes.FILTER_ALL)[0].style.border =
-            todosFiltersConstructorPrototype.setFocus(currentFilter,
-                FilterTypes.FILTER_ALL, "b");
+        todosFiltersConstructorPrototype.setFocus(currentFilter,
+            FilterTypes.FILTER_ALL, "b");
     document.getElementsByClassName(FilterTypes.FILTER_ACTIVE)[0].style.border =
         todosFiltersConstructorPrototype.setFocus(currentFilter,
             FilterTypes.FILTER_ACTIVE, "b");

@@ -14,7 +14,7 @@ TodosCounterConstructor.prototype.getNumOfActiveItems = function(todosArray) {
 };
 
 TodosCounterConstructor.prototype.render = function (todosArray) {
-    document.querySelector(".todos-actions-bar_counter-undone").innerHTML =
+    document.querySelector(".todos-actions_bar").innerHTML =
         this.getNumOfActiveItems(todosArray)
 };
 

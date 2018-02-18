@@ -4,9 +4,9 @@ var ActionsTypes = require('../../constants/ActionsTypes');
 
 var TODOS_LIST = ".todos-list";
 
-var TODOS_DELETE_BUTTON_CLASS_NAME = "todos-item_delete";
+var TODOS_DELETE_BUTTON_CLASS_NAME = "todos-list_item-remove";
 var TODOS_CHECKBOX_CLASS_NAME =
-    ["todos-item_done-mark", "todos-item_undone-mark"];
+    ["todos-list_item-ready", "todos-list_item-unready"];
 
 
 function TodosListConstructor() {

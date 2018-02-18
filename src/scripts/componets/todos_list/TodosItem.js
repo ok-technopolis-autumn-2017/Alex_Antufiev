@@ -1,26 +1,30 @@
 var FilterTypes = require('../../constants/FilterTypes')
 
-function TodosItemConstructor() {}
+function TodosItemConstructor() {
+}
 
 function setVisibility(currentFilter, completed) {
     switch (currentFilter) {
         case FilterTypes.FILTER_ALL: {
-            return "block"
-        } break;
+            return "flex"
+        }
+            break;
 
         case FilterTypes.FILTER_ACTIVE: {
             return (completed) ?
-                  "none" : "block"
-        } break;
+                "none" : "flex"
+        }
+            break;
 
         case FilterTypes.FILTER_COMPLETED : {
             return (!completed) ?
-                "none" : "block"
-        } break;
+                "none" : "flex"
+        }
+            break;
 
         default: {
             return {
-                display: "block"
+                display: "flex"
             };
         }
     }
@@ -30,39 +34,43 @@ var todosItemConstructorPrototype = TodosItemConstructor.prototype;
 
 todosItemConstructorPrototype.update = function (props, currentFilter, TodosItemNode) {
     TodosItemNode.className = (!props.completed)
-        ? "todos-item":
-        "todos-item __done";
+        ? "todos-list_item" :
+        "todos-list_item __done";
 
     TodosItemNode.style.display = setVisibility(currentFilter, props.completed);
 
     TodosItemNode.childNodes[0].className = (!props.completed)
-        ? "todos-item_undone-mark-w todos-item_belonging-checkbox":
-        "todos-item_done-mark-w todos-item_belonging-checkbox";
+        ? "todos-list_item-unready-w todos-list_item-checkbox" :
+        "todos-list_item-ready-w todos-list_item-checkbox";
 
     TodosItemNode.childNodes[0].childNodes[0].className = (!props.completed)
-        ? "todos-item_undone-mark-icon":
-        "todos-item_done-mark-icon";
+        ? "todos-list_item-unready-visual" :
+        "todos-list_item-ready-visual";
 
     TodosItemNode.childNodes[0].childNodes[1].className = (!props.completed)
-        ? "todos-item_undone-mark":
-        "todos-item_done-mark";
+        ? "todos-list_item-unready"
+        : "todos-list_item-ready";
+
+    TodosItemNode.childNodes[2].style.textDecoration = (!props.completed)
+        ? "none"
+        : "line-through";
 
     if (!props.completed) {
         TodosItemNode.childNodes[0].childNodes[1].removeAttribute("checked");
-        TodosItemNode.childNodes[0].childNodes[1].setAttribute("aria-label", "mark undone");
+        TodosItemNode.childNodes[0].childNodes[1].setAttribute("aria-label", "mark unready");
     } else {
         TodosItemNode.childNodes[0].childNodes[1].setAttribute("checked", "checked");
-        TodosItemNode.childNodes[0].childNodes[1].setAttribute("aria-label", "mark done");
+        TodosItemNode.childNodes[0].childNodes[1].setAttribute("aria-label", "mark ready");
     }
 
 };
 
-todosItemConstructorPrototype.render = function(props, currentFilter) {
+todosItemConstructorPrototype.render = function (props, currentFilter) {
     var newListEl = document.createElement("div");
 
     newListEl.className = (!props.completed)
-        ? "todos-item":
-        "todos-item __done";
+        ? "todos-list_item" :
+        "todos-list_item __done";
 
     newListEl.setAttribute("id", props.id);
 
@@ -73,28 +81,28 @@ todosItemConstructorPrototype.render = function(props, currentFilter) {
      */
     var newListElChild = document.createElement("div");
     newListElChild.className = (!props.completed)
-        ? "todos-item_undone-mark-w todos-item_belonging-checkbox":
-        "todos-item_done-mark-w todos-item_belonging-checkbox";
+        ? "todos-list_item-unready-w todos-list_item-checkbox" :
+        "todos-list_item-ready-w todos-list_item-checkbox";
 
     //1 child of first child
     var newListElChildChild = document.createElement("div");
     newListElChildChild.className = (!props.completed)
-        ? "todos-item_undone-mark-icon":
-        "todos-item_done-mark-icon";
+        ? "todos-list_item-unready-visual" :
+        "todos-list_item-ready-visual";
     newListElChild.appendChild(newListElChildChild);
 
     //2 child of first child
     newListElChildChild = document.createElement("input");
     newListElChildChild.className = (!props.completed)
-        ? "todos-item_undone-mark":
-        "todos-item_done-mark";
+        ? "todos-list_item-unready" :
+        "todos-list_item-ready";
     newListElChildChild.setAttribute("type", "checkbox");
     if (!props.completed) {
         newListElChildChild.removeAttribute("checked");
-        newListElChildChild.setAttribute("aria-label", "mark undone");
+        newListElChildChild.setAttribute("aria-label", "mark unready");
     } else {
         newListElChildChild.setAttribute("checked", "checked");
-        newListElChildChild.setAttribute("aria-label", "mark done");
+        newListElChildChild.setAttribute("aria-label", "mark ready");
     }
 
     newListElChild.appendChild(newListElChildChild);
@@ -104,19 +112,9 @@ todosItemConstructorPrototype.render = function(props, currentFilter) {
     /**
      * Second child
      */
-    newListElChild = document.createElement("div");
-    newListElChild.className = "todos-item_delete-w";
-
-    //1 of second child
-    newListElChildChild = document.createElement("div");
-    newListElChildChild.className = "todos-item_delete_icon";
-    newListElChild.appendChild(newListElChildChild);
-
-    //2 of second child
-    newListElChildChild = document.createElement("button");
-    newListElChildChild.className = "todos-item_delete";
-    newListElChildChild.setAttribute("aria-label", "delete item");
-    newListElChild.appendChild(newListElChildChild);
+    newListElChild = document.createElement("button");
+    newListElChild.className = "todos-list_item-remove";
+    newListElChild.setAttribute("aria-label", "remove item");
 
     newListEl.appendChild(newListElChild);
 
@@ -124,18 +122,14 @@ todosItemConstructorPrototype.render = function(props, currentFilter) {
      * Third child
      */
     newListElChild = document.createElement("div");
-    newListElChild.className = "todos-item_name-w";
+    newListElChild.className = "todos-list_item-name";
 
     //1 of third child
-    newListElChildChild = document.createElement("textarea");
-    newListElChildChild.className = "todos-item_name";
-    newListElChildChild.value = props.text;
-    newListElChild.appendChild(newListElChildChild);
+    newListElChild.innerHTML = props.text;
 
     newListEl.appendChild(newListElChild);
 
     return newListEl;
-
 };
 
 

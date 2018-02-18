@@ -1,7 +1,7 @@
 var Observable = require('../../utils/observer/Observable');
 var ActionsTypes = require('../../constants/ActionsTypes');
 
-var TODOS_DELETE_ALL_COMPLETED_BUTTON = "todos-actions-bar_delete-done";
+var TODOS_DELETE_ALL_COMPLETED_BUTTON = "todos-actions_bar-clear";
 
 function TodosDeleteAllCompletedConstructor() {
     this.todosDelButton.addEventListener('click', this.handlerClick);

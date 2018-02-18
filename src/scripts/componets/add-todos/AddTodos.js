@@ -1,8 +1,8 @@
 var Observable = require('../../utils/observer/Observable');
 var ActionsTypes = require('../../constants/ActionsTypes');
 
-var TODOS_ADD_INPUT = ".todos-add_new-item";
-var TODOS_MAKE_ALL_COMPLETED_BUTTON = ".todos-add_select-all";
+var TODOS_ADD_INPUT = ".todos-add-item";
+var TODOS_MAKE_ALL_COMPLETED_BUTTON = ".todos-add-select_all";
 var ENTER_KEY_CODE = 13;
 
 function AddTodosConstructor() {
@@ -21,7 +21,7 @@ addTodosConstructorPrototype.todosDelButton = document
 addTodosConstructorPrototype.onChange = new Observable();
 
 addTodosConstructorPrototype.setVisibility = function (numTodoItems) {
-    if (numTodoItems == 0) {
+    if (numTodoItems === 0) {
         this.todosDelButton.style.visibility = "hidden";
     } else {
         this.todosDelButton.style.visibility = "visible";
@@ -35,7 +35,7 @@ addTodosConstructorPrototype.handlerKeyPress = function (event) {
             "id": new Date().getTime(),
             "text": this.value
         });
-        this.value = '';
+        this.value = none;
     }
 };
 
