@@ -2,58 +2,52 @@
 
 .todos-add {
   border-bottom: 1px groove $color-border;
+  @include clearfix();
 }
 
-.todos-add:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+    .todos-add-select_all {
+      width: $button_side;
+      height: $button_side;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      float: left;
+      position: relative;
+      outline: none;
+      cursor: pointer;
+    }
 
-.todos-add_select-all {
-  width: $button_side;
-  height: $button_side;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  float: left;
-  position: relative;
-}
+      .todos-add-select_all:focus {
+        background: $c-white-light;
+      }
 
-.todos-add_select-all:focus {
-  background: $c-white-light;
-}
+        .todos-add-select_all-icon {
+          width: 24px;
+          height: 12px;
+          left: 20px;
+          bottom: 26px;
+          background: url('../../images/icons/select-all.png') no-repeat 0 0;
+          position: absolute;
+        }
 
-.todos-add_select-all_icon {
-  width: $button_side_main*2;
-  height: $button_side_main;
-  background: url('../../../images/icons/select-all.png') no-repeat 0 0;
-  position: absolute;
-  left: 50%;
-  //top: 50%;
-  margin: $button_side_main/2*-1 $button_side_main*-1;
-}
+    .todos-add-item-w {
+      overflow: hidden;
+    }
 
-.todos-add_item-w {
-  overflow: hidden;
-}
+        .todos-add-item {
+          width: 100%;
+          box-sizing: border-box;
+          border: 0;
+          background: none;
+          color: $c-gray-dark;
+          font-size: $fs_large;
+          padding-right: $offset_low_4x;
+          margin-top: $margin_normal;
+          outline: none;
+        }
 
-.todos-add_item {
-  width: 100%;
-  box-sizing: border-box;
-  border: 0;
-  background: none;
-  color: $c-gray-dark;
-  font-size: $fs_large;
-  line-height: 30px;
-  font-weight: $fw_normal;
-  padding-right: $offset_low_4x;
-  margin-top: $margin_normal;
-  outline: none;
-}
-
-.todos-add_item::placeholder {
-  color: $c-gray-light;
-  font-style: italic;
-}
+          .todos-add-item::placeholder {
+            color: $c-gray-light;
+            font-style: italic;
+          }

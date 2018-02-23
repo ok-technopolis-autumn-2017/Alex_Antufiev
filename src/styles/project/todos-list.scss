@@ -1,105 +1,110 @@
 @import "../config/globals";
 
 .todos-list {
-  border: none;
 }
 
-.todos-list_item {
-  border-bottom: 1px groove $color-border;
-  height: 64px;
-}
+    .todos-list_item {
+      border-bottom: 1px groove $color-border;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      @include clearfix();
+    }
 
-.todos-list_item:hover {
-  background: $color-border;
-}
+      .todos-list_item:hover{
+        background: $color-border;
+      }
 
-~ .todos-list_item_remove {
-  visibility: visible;
-}
+        .todos-list_item-checkbox {
+          float: left;
+          position: relative;
+        }
 
-.todos-list_item_checkbox {
-  width: $button_side;
-  height: $button_side;
-  position: relative;
-  float: left;
-  border: #666666;
+        .todos-list_item-checkbox input[type=checkbox] {
+          margin: 0;
+        }
 
-}
+            .todos-list_item-ready-w,
+            .todos-list_item-unready-w{
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin: 12px;
+            }
 
-.todos-list_item_checkbox_target {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
+            .todos-list_item-ready-w{
+              border: 1px solid $color-border-checkbox;
+              opacity: 1;
+            }
 
-.todos-list_item_checkbox_no-visual {
-  border: 1px solid $c-gray-light;
-  border-radius: 50%;
-  width: $button_side_main*3;
-  height: $button_side_main*3;
-  position: absolute;
-  margin: $margin_normal 0 0 $margin_normal;
-}
+            .todos-list_item-unready-w{
+              border: 1px solid $c-gray-light;
+              opacity: 1;
+            }
 
-.todos-list_item_checkbox_visual {
-  width: $button_side_main*3;
-  height: $button_side_main*3;
-  position: absolute;
-  margin: $margin_normal 0 0 $margin_normal;
-  border: 1px solid $c-gray-light;
-  border-radius: 50%;
-  background: url('../../../images/icons/completed.png') no-repeat 8px 8px;
-  visibility: hidden;
-}
+            .todos-list_item-ready,
+            .todos-list_item-unready{
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              cursor: pointer;
+            }
 
-.todos-list_item_checkbox_target:checked ~ .todos-list_item_checkbox_visual {
-  visibility: visible;
-  border-color: $color-border-checkbox;
-  font-style: oblique;
-}
+            .todos-list_item-ready-visual{
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              top: 25%;
+              left: 25%;
+              background: url('../../images/icons/completed.png') no-repeat 0 0;
+              opacity: 1;
+            }
 
-.todos-list_item_checkbox_target:checked ~ .todos-list_item_checkbox_no-visual {
-  border-color: $color-border-checkbox;
-}
+            .todos-list_item-unready-visual{
+              width: 20px;
+              height: 20px;
+              top: 13px;
+              left: 13px;
+              position: absolute;
+              opacity: 1;
+            }
 
-.todos-list_item_remove {
-  width: $button_side;
-  height: $button_side;
-  border: none;
-  padding: 0;
-  margin: 0;
-  float: right;
-  //position: relative;
-  //outline: none;
-  visibility: hidden;
-  background: url('../../../images/icons/close.png') no-repeat 0 0;
-}
+        .todos-list_item-remove {
+          width: 18px;
+          height: 18px;
+          float: right;
+          position: relative;
+          order: 2;
+          display: block;
+          margin-left: 10px;
+          margin-right: 10px;
+          -webkit-box-ordinal-group: 2;
+          vertical-align: top;
+          border: none;
+          opacity: 0;
+          outline: none;
+          background: url('../../images/icons/close.png') no-repeat 0 0;
+          cursor: pointer;
+        }
 
-.todos-list_item_remove_icon {
-  width: $button_side_main*1.5;
-  height: $button_side_main*1.5;
-  position: absolute;
-  margin: -$offset_low_3x 0 0 23px;
-}
+          .todos-list_item-remove:hover{
+            opacity: 1;
+          }
 
-.todos-list_item_name {
-  height: $button_side;
-  overflow: hidden;
-  box-sizing: border-box;
-  display: inline-block;
-  border: none;
-  background: none;
-  resize: none;
-  color: $c-gray-dark;
-  font-size: $fs_large;
-  line-height: 20px;
-  font-weight: $fw_normal;
-  padding-right: $offset_low_4x;
-  margin-top: $offset_6x;
-  outline: none;
-  white-space: normal;
-}
+        .todos-list_item-name {
+          overflow: hidden;
+          -webkit-box-flex: 1;
+          flex: 1 0;
+          word-wrap: break-word;
+          display: block;
+          margin-top: 2%;
+          margin-bottom: 2%;
+        }
+
+        .__done > .todos-list_item-name-w > .todos-list_item-name{
+          text-decoration:line-through;
+        }

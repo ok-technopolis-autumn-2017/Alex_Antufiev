@@ -1,0 +1,21 @@
+.todos-filter{
+  font-size: $small-text-size;
+  color: $c-gray-dark;
+  padding: 0;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 2px solid $c-white;
+  border-radius: 2px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.todos-filter:hover,
+.todos-filter:focus{
+  border: 2px solid $border-color;
+  border-radius: 2px;
+}
