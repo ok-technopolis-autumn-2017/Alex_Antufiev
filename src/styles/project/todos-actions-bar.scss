@@ -1,0 +1,59 @@
+@import "../config/globals";
+
+$border-focus: 1px solid $color-focus;
+$border-no_focus: 1px solid $c-white;
+
+.todos-actions-bar {
+  min-height: 40px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todos-actions-bar_counter {
+  box-sizing: border-box;
+  border: 0;
+  background: none;
+  resize: none;
+  color: $c-gray;
+  line-height: $offset_high_4x;
+  font-weight: $fw_normal;
+  padding: 0 0 0 $offset_low_4x;
+  outline: none;
+  margin-top: $offset_low_3x;
+  float: left;
+}
+
+.todos-actions-bar_clear {
+  border: 0;
+  background: none;
+  resize: none;
+  margin-top: $offset_low_3x;
+  color: $c-gray;
+  font-weight: $fw_normal;
+  padding: 0 $offset_low_4x 0 0;
+  outline: none;
+  float: right;
+}
+
+.todos-actions-bar_filter:focus {
+  border: $border-focus;
+}
+
+.todos-actions-bar_filters {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.todos-actions-bar_filter {
+  outline: none;
+  color: $c-gray;
+  background: none;
+  border: $border-no_focus;
+  padding-bottom: 0;
+  margin: $offset_high*2 0 0 10%;
+  align-items: center;
+  border-radius: 8px;
+}
